@@ -110,6 +110,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# scraper environment - my entry
+scraper/.venv
+
 # Spyder project settings
 .spyderproject
 .spyproject
