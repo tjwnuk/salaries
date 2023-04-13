@@ -1,2 +1,25 @@
 # salaries
-Salaries of Polish developers
+Salaries of Polish developers. Data science project aiming to process and analize salaries of Polish software engineers, based on their claims found on 4programmers.net forum thread.
+
+## Aim of the project
+The project takes the data contained in the following thread:
+
+[https://4programmers.net/Forum/Kariera/233131-ile_zarabiacie?page=1](https://4programmers.net/Forum/Kariera/233131-ile_zarabiacie?page=1)
+
+The devs were posting their earnings, stack and experience in the thread, the project aims to:
+1. Scrape this data
+2. Statistically analyze it, for example:
+    1. Compute mean, dominant and median of it
+    2. Make some graphs
+
+## Author and license
+
+Copyright 2023 Tomasz Wnuk
+
+This code is for educational purposes only. Please do not modify or redistribute it.
+
+Contact: tjwnuk@proton.me
+
+https://github.com/tjwnuk
+
+https://www.linkedin.com/in/tjwnuk/
