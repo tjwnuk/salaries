@@ -1,4 +1,4 @@
-# salaries
+# Salaries of Polish software developers
 Salaries of Polish developers. Data science project aiming to process and analize salaries of Polish software engineers, based on their claims found on 4programmers.net forum thread.
 
 ## Aim of the project
