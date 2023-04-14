@@ -12,6 +12,24 @@ BOT_NAME = "forum"
 SPIDER_MODULES = ["forum.spiders"]
 NEWSPIDER_MODULE = "forum.spiders"
 
+# my entries
+
+SPLASH_URL = 'http://localhost:8051'
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_splash.SplashCookiesMiddleware': 723,
+    'scrapy_splash.SplashMiddleware': 725,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
+}
+
+SPIDER_MIDDLEWARES = {
+    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+}
+
+DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+
+# end of my entries
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "forum (+http://www.yourdomain.com)"
