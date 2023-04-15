@@ -1,2 +1,2 @@
-cd scraper
+cd ./scraper
 time scrapy crawl salaries

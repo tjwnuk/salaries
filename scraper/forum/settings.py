@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = "forum.spiders"
 
 # my entries
 
-SPLASH_URL = 'http://localhost:8051'
+SPLASH_URL = 'http://splash:8050'
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashCookiesMiddleware': 723,
@@ -27,6 +27,8 @@ SPIDER_MIDDLEWARES = {
 }
 
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:101.0) Gecko/20100101 Firefox/101.0'
 
 # end of my entries
 

@@ -1,4 +1,5 @@
 import scrapy
+from scrapy_splash import SplashRequest
 
 from .helpers.urls import get_urls
 
@@ -15,7 +16,7 @@ class SalariesSpider(scrapy.Spider):
 
     def start_requests(self):
         for url in self.start_urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+            yield SplashRequest(url=url, callback=self.parse, args = {'wait': 5 })
 
     def parse(self, response):
         posts = response.css('.card.card-post')

@@ -10,6 +10,7 @@ RUN apt-get install python-is-python3 -y
 RUN apt-get install cron -y && cron
 RUN apt-get install bash -y
 RUN apt-get install nano -y
+RUN apt-get install curl -y
 
 # python packages
 COPY scraper/requirements.txt ./scraper/requirements.txt
