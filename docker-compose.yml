@@ -6,12 +6,14 @@ services:
     hostname: splash
     command: --maxrss 2048 --max-timeout 300 --disable-lua-sandbox --verbosity 1
     ports:
-      - "8050:8051"
+      - "8050:8050"
     restart: always
   salaries-scraper:
     build: .
     restart: "no"
-    command: bash -c "/usr/src/app/wait-for-it.sh --timeout=0 splash:8050 && /usr/src/app/start.sh"
+    # command: bash -c "/usr/src/app/wait-for-it.sh --timeout=0 localhost:9000 && /usr/src/app/start.sh"
+    command: bash -c "/usr/src/app/start.sh"
     volumes:
       - ./:/usr/src/app
       - /dev/shm:/dev/shm
+    network_mode: "service:splash" # necessary to connect between two containers, without it it wont work and return error 111
