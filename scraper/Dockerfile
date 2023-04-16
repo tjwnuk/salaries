@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/scraper
 
 # installing essential packages
 RUN apt-get update
@@ -13,11 +13,10 @@ RUN apt-get install nano -y
 RUN apt-get install curl -y
 
 # python packages
-COPY scraper/requirements.txt ./scraper/requirements.txt
-RUN pip install --no-cache-dir -r ./scraper/requirements.txt
+COPY requirements.txt .
+RUN pwd
+RUN pip install --no-cache-dir -r requirements.txt
 
 # copy start script
 COPY start.sh .
-COPY wait-for-it.sh .
 RUN chmod +x start.sh
-RUN chmod +x wait-for-it.sh
