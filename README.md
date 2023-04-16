@@ -12,6 +12,15 @@ The devs were posting their earnings, stack and experience in the thread, the pr
     1. Compute mean, dominant and median of it
     2. Make some graphs
 
+## Notes
+
+Remember to
+```bash
+chmod +x start.sh
+chmod +x wait-for-it.sh
+```
+in host system
+
 ## Author and license
 
 Copyright 2023 Tomasz Wnuk
