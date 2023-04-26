@@ -16,6 +16,14 @@ NEWSPIDER_MODULE = "forum.spiders"
 
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:101.0) Gecko/20100101 Firefox/101.0'
 
+SELENIUM_DRIVER_NAME = 'chrome'
+# SELENIUM_DRIVER_EXECUTABLE_PATH = '/path/to/chromedriver'
+SELENIUM_DRIVER_ARGUMENTS = ['--headless']
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_selenium.SeleniumMiddleware': 800
+}
+
+
 # end of my entries
 
 
