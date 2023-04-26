@@ -31,6 +31,7 @@ class SalariesSpider(scrapy.Spider):
 
     def __init__(self):
         # at 14.04.2023 there's 376 pages
+        # at 26.04.2023 there's 377 pages
         self.start_urls = get_urls(1)
         self.driver = get_driver()
 
@@ -58,10 +59,18 @@ class SalariesSpider(scrapy.Spider):
         for post in posts:
 
             author = post.xpath(".//*[@class='mb-0 post-author']/*/text()").get()
+            date = post.xpath(".//time/text()").get()
+            post_id = post.xpath(".//@id").get()
+            url = post.xpath(".//time/../@href").get()
+            vote_count = post.xpath(".//*[contains(@class, 'vote-count')]/text()").get()
             post_content = post.xpath(".//*[contains(@class, 'post-content')]").get()
 
             yield {
                 'author': author,
+                'date': date,
+                'post_id': post_id,
+                'url': url,
+                'vote_count': vote_count,
                 'post_content': post_content,
             }
 
