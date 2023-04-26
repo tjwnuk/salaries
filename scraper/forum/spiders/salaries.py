@@ -32,8 +32,12 @@ class SalariesSpider(scrapy.Spider):
     def __init__(self):
         # at 14.04.2023 there's 376 pages
         # at 26.04.2023 there's 377 pages
-        self.start_urls = get_urls(1)
+        self.start_urls = get_urls(377)
         self.driver = get_driver()
+
+        # reset after every 200 posts
+        # in order to do that you must create the counter
+        self.pages_counter = 0
 
     def start_requests(self):
         for url in self.start_urls:
@@ -43,6 +47,11 @@ class SalariesSpider(scrapy.Spider):
         '''
         parse method processess all the forum posts
         '''
+        
+        # reset the connection every 10 pages
+        if (self.pages_counter % 10 == 0):
+            self.driver = get_driver()
+        self.pages_counter += 1
 
         self.driver.get(response.url)
 
@@ -55,6 +64,7 @@ class SalariesSpider(scrapy.Spider):
         )
 
         posts = sel.xpath("//*[contains(@class, 'card-post')]")
+
 
         for post in posts:
 
