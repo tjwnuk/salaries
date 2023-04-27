@@ -24,6 +24,10 @@ in host system
 ### Conda venv
 ```bash
 conda create -p ./conda-venv
+conda init
+
+#this one prevents conda from activate on startup
+conda config --set auto_activate_base false
 ```
 conda-venv directory added to gitignore
 
