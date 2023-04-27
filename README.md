@@ -21,6 +21,12 @@ chmod +x wait-for-it.sh
 ```
 in host system
 
+### Conda venv
+```bash
+conda create -p ./conda-venv
+```
+conda-venv directory added to gitignore
+
 ## Author and license
 
 Copyright 2023 Tomasz Wnuk
