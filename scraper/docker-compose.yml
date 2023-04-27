@@ -1,13 +1,17 @@
 version: '2'
 
 services:
-  splash:
-    image: scrapinghub/splash:3.5.0
-    hostname: splash
-    command: --maxrss 2048 --max-timeout 300 --disable-lua-sandbox --verbosity 1
+  browser:
+    image: browserless/chrome:1-chrome-stable
+    volumes:
+      - /dev/shm:/dev/shm # Shared memory is required for Chrome to work correctly
     ports:
-      - "8051:8050"
-    restart: always
+      - 3000:3000 # Map container port 3000 to host port 3000
+    environment:
+      - "DEBUG=browserless*"
+      - "CONNECTION_TIMEOUT=60000" # Optional: set the connection timeout to 60 seconds
+    hostname: browser
+
   salaries-scraper:
     build: .
     restart: "no"
@@ -16,4 +20,4 @@ services:
     volumes:
       - ./:/usr/src/app/scraper
       - /dev/shm:/dev/shm
-    network_mode: "service:splash" # necessary to connect between two containers, without it it wont work and return error 111
+    network_mode: "service:browser" # necessary to connect between two containers, without it it wont work and return error 111
