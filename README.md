@@ -1,5 +1,14 @@
 # Salaries of Polish software developers
-Salaries of Polish developers. Data science project aiming to process and analize salaries of Polish software engineers, based on their claims found on 4programmers.net forum thread.
+Salaries of Polish developers. Project aiming to process and analize salaries of Polish software engineers, based on their claims found on 4programmers.net forum thread.
+The project is utilising Python, Docker, Scrapy, Pandas and Jupyter Notebook.
+
+## PL
+Wynagrodzenia polskich deweloperów. Projekt mający na celu zebranie i przeanalizowanie danych dotyczących deklarowanych wynagrodzeń polskich programistów.
+Dane zostały pozyskane z forum strony 4programmers.net:
+
+[https://4programmers.net/Forum/Kariera/233131-ile_zarabiacie?page=1](https://4programmers.net/Forum/Kariera/233131-ile_zarabiacie?page=1)
+
+Projekt wykorzystuje technologie Python, Docker, Scrapy, Pandas i Jupyter Notebook.
 
 ## Aim of the project
 The project takes the data contained in the following thread:
