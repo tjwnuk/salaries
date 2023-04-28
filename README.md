@@ -23,13 +23,26 @@ in host system
 
 ### Conda venv
 ```bash
-conda create -p ./conda-venv
 conda init
+conda create -p ./conda-venv
 
 #this one prevents conda from activate on startup
 conda config --set auto_activate_base false
+conda activate conda-venv
+pip install jupyter-notebook
 ```
 conda-venv directory added to gitignore
+
+when running
+```bash
+cd salaries
+conda activate conda-venv
+```
+
+when stopping
+```bash
+conda deactivate
+```
 
 ## Author and license
 
