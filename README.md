@@ -30,6 +30,7 @@ conda create -p ./conda-venv
 conda config --set auto_activate_base false
 conda activate conda-venv
 pip install jupyter-notebook
+pip install pandas
 ```
 conda-venv directory added to gitignore
 
