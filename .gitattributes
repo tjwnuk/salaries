@@ -1,0 +1,4 @@
+# ignore *.jl and *.json files containing data
+
+*.jl linguist-generated=true
+*.json linguist-generated=true
