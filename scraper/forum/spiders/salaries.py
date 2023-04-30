@@ -32,7 +32,8 @@ class SalariesSpider(scrapy.Spider):
     def __init__(self):
         # at 14.04.2023 there's 376 pages
         # at 26.04.2023 there's 377 pages
-        self.start_urls = get_urls(377)
+        # at 30.04.2023 there's 378 pages
+        self.start_urls = get_urls(378)
         self.driver = get_driver()
 
         # reset after every 200 posts

@@ -16,5 +16,5 @@ def get_urls(last_page_number):
 
     return urls
 
-# for link in get_urls(376):
+# for link in get_urls(378):
 #     print(link)
