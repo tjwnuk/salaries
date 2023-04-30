@@ -31,6 +31,7 @@ chmod +x wait-for-it.sh
 in host system
 
 ### Conda venv
+Create conda venv and install required packages
 ```bash
 conda init
 conda create -p ./conda-venv
@@ -38,8 +39,10 @@ conda create -p ./conda-venv
 #this one prevents conda from activate on startup
 conda config --set auto_activate_base false
 conda activate conda-venv
+
 pip install jupyter-notebook
 pip install pandas
+pip install matplotlib
 ```
 conda-venv directory added to gitignore
 
